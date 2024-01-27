@@ -11,3 +11,8 @@
 ###### * Company Name  Input name=c_name
 ###### * Company Link Input name=c_link
 
+
+### Feedback form (index.html )
+###### -Feedback Name Input name=f_name
+###### -Feedback Rating Input name=f_rating
+###### -Feedback Input name=feedback
