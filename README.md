@@ -1,6 +1,11 @@
 # Career_Harbor
 ## Stage-1 Front-End 
-### Login form 
-###### name = username
-###### name = password
+### Admin.html
+#### Feedback Approved and Delete
+
+###### 1.feedback_approval view -->Dynamic routing for approving feedback
+###### 2.feedback_delete view -->Dynamic routing for delete feedback
+
+
+
 
