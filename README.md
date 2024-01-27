@@ -6,6 +6,8 @@
 ###### 1.feedback_approval view -->Dynamic routing for approving feedback
 ###### 2.feedback_delete view -->Dynamic routing for delete feedback
 
+### User data insert Form(User.html)
 
-
+###### * Company Name  Input name=c_name
+###### * Company Link Input name=c_link
 
