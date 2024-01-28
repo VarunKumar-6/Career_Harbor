@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>User</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/css/login.css">
+    {% comment %} <link rel="stylesheet" href="css/login.css"> {% endcomment %}
   </head>
   <body>
+    <br><br>
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container-fluid">
            <a class="navbar-brand" href="#">Careers-Harbor</a>
@@ -23,15 +24,28 @@
                     <a class="nav-link active" aria-current="page" href="#">Contact</a>
                  </li>
                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">OPtion 3</a>
+                    <a class="nav-link active" aria-current="page" href="#">OPtion</a>
                  </li>
               </ul>
-              <div class="d-flex" role="search">
-                 <a class="btn btn-success" href="index.html" type="submit">Back</a>
-              </div>
+              <div class="d-flex gap-2" role="search">
+                <a class="btn btn-success " href="{% url 'career' %}">Back</a>              
+            </div>
+            <div class="conatiner d-flex justify-content-end gap-2">
+                <a class="btn btn-danger" href="{% url 'logout' %}">Logout</a>
+            </div>
            </div>
         </div>
      </nav>
+     {% if messages %}
+    <div class="container col-lg-4">
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+        {% endfor %}
+    </div>
+      {% endif %}
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-2"></div>
@@ -39,20 +53,20 @@
                 <div class="col-lg-12 login-key">
                     <i class="fa fa-key" style="color: white;" aria-hidden="true"></i>
                 </div>
-                <div class="col-lg-12 login-title">
-                    LOGIN PANEL
+                <div class="col-lg-12 login-title mt-3">
+                    User Insert Data
                 </div>
 
-                <div class="col-lg-12 login-form">
+                <div class="col-lg-12 login-form mt-3">
                     <div class="col-lg-12 login-form">
-                        <form>
+                        <form method="POST">{% csrf_token %}
                             <div class="form-group">
-                                <label class="form-control-label">USERNAME</label>
-                                <input type="text" class="form-control">
+                                <label class="form-control-label">Company Name : </label>
+                                <input name="c_name" type="text" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label class="form-control-label">PASSWORD</label>
-                                <input type="password" class="form-control" i>
+                                <label class="form-control-label">Company Career : </label>
+                                <input name="c_link" type="text" class="form-control" i>
                             </div>
 
                             <div class="col-lg-12 loginbttm">
@@ -60,16 +74,14 @@
                                     <!-- Error Message -->
                                 </div>
                                 <div class="col-lg-6 login-btm login-button">
-                                    <button type="submit" class="btn btn-outline-primary">LOGIN</button>
+                                    <button type="submit" class="btn btn-outline-primary">Submit</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-2"></div>
             </div>
         </div>
-        
         <script src="https://kit.fontawesome.com/dedeab9b5a.js" crossorigin="anonymous"></script>    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
