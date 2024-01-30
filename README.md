@@ -16,3 +16,13 @@
 ###### -Feedback Name Input name=f_name
 ###### -Feedback Rating Input name=f_rating
 ###### -Feedback Input name=feedback
+
+
+## Stage-2 Database(Models)
+## App Models
+### Careers_hub--->Class name
+
+| Attributes    | Models Fields | Constraints    |
+| ------------- |:-------------:|---------------:|
+| company_name  | CharField     | max_length=30  |
+| company_link  | TextField     | max_length=100 |
