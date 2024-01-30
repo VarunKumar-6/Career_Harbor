@@ -3,7 +3,7 @@ from django.contrib import messages
 from careers_web.models import Careers_hub
 from careers_web.models import Career_feedback
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login,authenticate,logout
+from django.contrib.auth import login,authenticate
 
 
 def home(request):
@@ -45,3 +45,8 @@ def login_views(request):
             messages.warning(request,'You enter wrong user or password')
             return render(request,'login.html')
     return render(request,'login.html')
+    
+@login_required(login_url='login')
+def admin_views(request):
+    result = Career_feedback.objects.filter(status="pending")
+    return render(request, 'admin.html', {'data': result})    
