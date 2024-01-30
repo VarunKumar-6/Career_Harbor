@@ -8,7 +8,7 @@
 
 ### User data insert Form(User.html)
 
-###### * Company Name  Input name=c_name
+###### * Company Name  Input  name=c_name
 ###### * Company Link Input name=c_link
 
 
