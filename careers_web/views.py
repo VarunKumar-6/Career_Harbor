@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib import messages
 from careers_web.models import Careers_hub
 from careers_web.models import Career_feedback
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login,authenticate,logout
 
 
 def home(request):
@@ -19,3 +21,27 @@ def home(request):
         return render(request,'index.html',context)
 
     return render(request,'index.html',context)
+
+def login_views(request):
+    if request.user.is_authenticated:
+        messages.warning(request,"You are alredy Logged in...")
+        if request.user.is_superuser:
+            return redirect('AdminPanel')
+        else:
+            return redirect('User')
+    if request.method=='POST':
+        userName=request.POST.get('username')
+        passWord=request.POST.get('password')
+        user=authenticate(username=userName,password=passWord,is_activate=True)
+        if user is not None:
+            login(request,user)
+            if request.user.is_superuser:
+                messages.success(request,'Admin  you are successfully logged in..')
+                return redirect('AdminPanel')
+            else:
+                messages.info(request,'normal user successfully login')
+                return render(request,'user.html')
+        else:
+            messages.warning(request,'You enter wrong user or password')
+            return render(request,'login.html')
+    return render(request,'login.html')
