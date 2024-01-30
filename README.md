@@ -49,11 +49,13 @@
 ###### 1.home
 ###### 2.login_views
 ###### 4.admin_views
+###### 6.logout_views
 ### App Urls ---->Function name with Nicknames
 
 
 |   Route             |   Views Name            |   Nicknames                     | 
 | --------------------|:-----------------------:|--------------------------------:|
 | ''                  | views.home              |  name='career'                  |
-| 'login'             | views.login_views       |  name='login'                   |    
+| 'login'             | views.login_views       |  name='login'                   |  
 |'AdminPanel'         | views.admin_views       |  name='AdminPanel'              |
+| 'logout'            | views.logout_views      | name='logout'                   |
