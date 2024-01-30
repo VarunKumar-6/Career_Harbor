@@ -55,7 +55,11 @@ def User_views(request):
         obj.save()
         messages.success(request, 'You are inserted succecessfully..')
         return redirect('User')
+<<<<<<< HEAD
     return render(request, 'user.html')  
+=======
+    return render(request, 'user.html')
+>>>>>>> 5e8636f10d8a5e8bfaf63d564930a81a1c2d61b4
     
 @login_required(login_url='login')
 def admin_views(request):
