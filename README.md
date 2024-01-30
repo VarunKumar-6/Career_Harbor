@@ -26,3 +26,14 @@
 | ------------- |:-------------:|---------------:|
 | company_name  | CharField     | max_length=30  |
 | company_link  | TextField     | max_length=100 |
+
+
+### Career_Feedback--->Class name
+
+|Attributes     | Models Fields   | Constraints                     | 
+| --------------|:---------------:|--------------------------------:|
+| fullname      | CharField()     | max_length=30                   |       
+| email         | emailField()    |                                 |
+| rating        | IntegerField()  |                                 |
+| feedback      | CharField()     | max_length=500                  |
+| status        | CharField()     | default="pending",max_length=20 |
