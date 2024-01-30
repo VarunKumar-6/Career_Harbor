@@ -45,6 +45,21 @@ def login_views(request):
             messages.warning(request,'You enter wrong user or password')
             return render(request,'login.html')
     return render(request,'login.html')
+
+@login_required(login_url='login')
+def User_views(request):
+    if request.method == 'POST':
+        c_name = request.POST.get('c_name')
+        c_link = request.POST.get('c_link')
+        obj = Careers_hub(company_name=c_name, company_link=c_link)
+        obj.save()
+        messages.success(request, 'You are inserted succecessfully..')
+        return redirect('User')
+<<<<<<< HEAD
+    return render(request, 'user.html')  
+=======
+    return render(request, 'user.html')
+>>>>>>> 5e8636f10d8a5e8bfaf63d564930a81a1c2d61b4
     
 @login_required(login_url='login')
 def admin_views(request):
