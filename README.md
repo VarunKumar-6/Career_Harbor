@@ -59,3 +59,4 @@
 | 'login'             | views.login_views       |  name='login'                   |  
 |'AdminPanel'         | views.admin_views       |  name='AdminPanel'              |
 | 'logout'            | views.logout_views      | name='logout'                   |
+| 'approved/<int:pk>' | views.feedback_approval |  name='approved' 

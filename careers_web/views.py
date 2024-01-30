@@ -55,4 +55,13 @@ def logout_views(request):
     messages.info(request,'You are successfully logged out...')
     return redirect('login')
 
-
+def feedback_approval(request, pk):
+    if Career_feedback.objects.filter(id=pk).exists():
+        obj = Career_feedback.objects.get(id=pk)
+        obj.status = 'approved'
+        obj.save()
+        messages.info(request, 'Feedback Approved...')
+        return redirect('AdminPanel')
+    else:
+        messages.error(request, 'Feedback Not Found...')
+        return redirect('AdminPanel')
