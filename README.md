@@ -47,9 +47,11 @@
 
 ### App Views---->(Function names)
 ###### 1.home
+###### 2.login_views
 ### App Urls ---->Function name with Nicknames
 
 
 |   Route             |   Views Name            |   Nicknames                     | 
 | --------------------|:-----------------------:|--------------------------------:|
-| ''                  | views.home              |  name='career'                  |       
+| ''                  | views.home              |  name='career'                  |
+| 'login'             | views.login_views       |  name='login'                   |       
