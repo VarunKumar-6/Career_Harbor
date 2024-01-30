@@ -7,4 +7,6 @@ urlpatterns = [
     path('AdminPanel',views.admin_views,name='AdminPanel'),
     path('logout',views.logout_views,name='logout'),
     path('approved/<int:pk>',views.feedback_approval,name='approved'),
+    path('delete/<int:pk>',views.feedback_delete,name='delete'),
+
 ]    

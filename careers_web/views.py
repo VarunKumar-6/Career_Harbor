@@ -65,3 +65,14 @@ def feedback_approval(request, pk):
     else:
         messages.error(request, 'Feedback Not Found...')
         return redirect('AdminPanel')
+        
+def feedback_delete(request, pk):
+    if Career_feedback.objects.filter(id=pk).exists():
+        obj = Career_feedback.objects.get(id=pk)
+        obj.delete()
+        messages.info(
+            request, 'You are successfully deleted pending feedbacks...')
+        return redirect('AdminPanel')
+    else:
+        messages.warning(request, 'You delete feedback not found')
+        return redirect('AdminPanel')        

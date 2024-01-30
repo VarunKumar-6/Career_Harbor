@@ -49,7 +49,9 @@
 ###### 1.home
 ###### 2.login_views
 ###### 4.admin_views
-###### 6.logout_views
+###### 5.feedback_approval
+###### 6.feedback_delete
+###### 7.logout_views
 ### App Urls ---->Function name with Nicknames
 
 
@@ -59,4 +61,5 @@
 | 'login'             | views.login_views       |  name='login'                   |  
 |'AdminPanel'         | views.admin_views       |  name='AdminPanel'              |
 | 'logout'            | views.logout_views      | name='logout'                   |
-| 'approved/<int:pk>' | views.feedback_approval |  name='approved' 
+| 'approved/<int:pk>' | views.feedback_approval |  name='approved'                |
+| 'delete/<int:pk>'   | views.feedback_delete   |  name='delete'                  |
