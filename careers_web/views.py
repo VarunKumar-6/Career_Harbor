@@ -3,7 +3,7 @@ from django.contrib import messages
 from careers_web.models import Careers_hub
 from careers_web.models import Career_feedback
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login,authenticate
+from django.contrib.auth import login,authenticate,logout
 
 
 def home(request):
@@ -49,4 +49,10 @@ def login_views(request):
 @login_required(login_url='login')
 def admin_views(request):
     result = Career_feedback.objects.filter(status="pending")
-    return render(request, 'admin.html', {'data': result})    
+    return render(request, 'admin.html', {'data': result})   
+def logout_views(request):
+    logout(request)
+    messages.info(request,'You are successfully logged out...')
+    return redirect('login')
+
+
