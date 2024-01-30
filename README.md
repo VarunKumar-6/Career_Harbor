@@ -37,3 +37,19 @@
 | rating        | IntegerField()  |                                 |
 | feedback      | CharField()     | max_length=500                  |
 | status        | CharField()     | default="pending",max_length=20 |
+
+
+## Stage-3 Backend 
+### Main Urls---->
+|   Route             |   App Name                    |
+| --------------------|:-----------------------------:|
+| ''                  | include('careers_web.urls')   |              
+
+### App Views---->(Function names)
+###### 1.home
+### App Urls ---->Function name with Nicknames
+
+
+|   Route             |   Views Name            |   Nicknames                     | 
+| --------------------|:-----------------------:|--------------------------------:|
+| ''                  | views.home              |  name='career'                  |       
