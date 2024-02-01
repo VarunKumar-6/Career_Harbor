@@ -3,9 +3,14 @@
     padding: 0;
     margin: 0;
   }
-  
+  /* html {
+    background: url("../assets/job3.jpg") ;
+    background-size: cover;
+  } */
   body {
     font-family: "Josefin Sans", sans-serif;
+    background: url("../assets/banner.jpg") ;
+    background-size: cover;
   }
   
   .navbar {

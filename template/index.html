@@ -49,7 +49,7 @@
     
     <!-- header -->
     <header>
-      <img src="{% static 'assets/job3.jpg' %}"  width="100%", height="500px"  alt="">
+      <!-- <img src="{% static 'assets/job3.jpg' %}"  width="100%", height="500px"  alt=""> -->
       <h1 class="header-title">FIND YOUR <br /><span style="color: chocolate;">PERFECT COMPANY</span> <br>EASILY</h1>
     </header>
     <div class="modal fade" id="login">
@@ -60,7 +60,7 @@
             <button class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body">
-            <form method="POST" action="{% url "login" %}">{% csrf_token %}
+            <form method="POST" action="{% url 'login' %}">{% csrf_token %}
               <div class="form-control mb-2">
                 <input class="input input-alt" placeholder="Username" name="username" required type="text">
                 <span class="input-border input-border-alt"></span>
@@ -130,7 +130,7 @@
          </div>
        </div>
       <div class="container-md col-lg-6 col-md-12" style="height:90vh">
-         <h3 class="mt-2">Posts &nbsp; <i class="fa-solid fa-bell "></i></h3>
+         <h1  style="color: black;" >Career-Oppurtunities </h1>
          <hr/>
          {% if career_records %}
          <div class="row p-2 rounded border border-dark m-2 post-card">
@@ -210,10 +210,10 @@
            $('#companies').DataTable({
              dom: 'Bfrtip',
              buttons: [
-               'copyHtml5',
-               'excelHtml5',
-               'csvHtml5',
-               'pdfHtml5'
+              //  'copyHtml5',
+              //  'excelHtml5',
+              //  'csvHtml5',
+              //  'pdfHtml5'
              ]
            });
          });
